@@ -877,7 +877,7 @@ class PlayState extends MusicBeatState
 		
 		var isBside:Bool = SONG.song.toLowerCase().contains('b-side'); // leaks for the people who read source code lol!
 		
-		var gfVersion:String = SONG.gfVersion;
+		var gfVersion:String = 'gf';
 
 		switch (SONG.gfVersion)
 		{
@@ -889,7 +889,7 @@ class PlayState extends MusicBeatState
 				gfVersion = 'gf-pixel';
 			case 'gf-crucified':
 				gfVersion = 'gf-crucified';
-			case 'whitty':
+			case 'gf-whitty':
 				gfVersion = 'gf-whitty';
 			default:
 				gfVersion = 'gf';
