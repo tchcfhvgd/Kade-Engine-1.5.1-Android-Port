@@ -112,6 +112,7 @@ class PlayState extends MusicBeatState
 	public static var gf:Character;
 	public static var boyfriend:Boyfriend;
 	public static var ZardyBackground:FlxSprite;
+	private var garcellotired:Character;
 
 	public var notes:FlxTypedGroup<Note>;
 	private var unspawnNotes:Array<Note> = [];
@@ -372,6 +373,14 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('overhead/pleaseSubscribe'));
 			case 'ballistic' | 'ballistic-b-side':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('ballistic/pleaseSubscribe'));
+			case 'headache':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('headache/headacheDialogue'));
+			case 'nerves':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('nerves/nervesDialogue'));
+			case 'release':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('release/releaseDialogue'));
+			case 'fading':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('fading/fadingDialogue'));
 		}
 
 		switch(SONG.stage)
@@ -570,6 +579,80 @@ class PlayState extends MusicBeatState
 					var evilSnow:FlxSprite = new FlxSprite(-200, 700).loadGraphic(Paths.image("christmas/evilSnow",'week5'));
 						evilSnow.antialiasing = true;
 					add(evilSnow);
+                        }
+		          case 'garAlley':
+		          {
+		                  defaultCamZoom = 0.9;
+						  curStage = 'garAlley';
+
+						  var bg:FlxSprite = new FlxSprite(-500, -170).loadGraphic(Paths.image('garStagebg'));
+						  bg.antialiasing = true;
+						  bg.scrollFactor.set(0.7, 0.7);
+						  bg.active = false;
+						  add(bg);
+
+						  var bgAlley:FlxSprite = new FlxSprite(-500, -200).loadGraphic(Paths.image('garStage'));
+						  bgAlley.antialiasing = true;
+						  bgAlley.scrollFactor.set(0.9, 0.9);
+						  bgAlley.active = false;
+						  add(bgAlley);
+
+					}
+		          case 'garAlleyDead':
+		          {
+		                  defaultCamZoom = 0.9;
+						  curStage = 'garAlleyDead';
+
+						  var bg:FlxSprite = new FlxSprite(-500, -170).loadGraphic(Paths.image('garStagebgAlt'));
+						  bg.antialiasing = true;
+						  bg.scrollFactor.set(0.7, 0.7);
+						  bg.active = false;
+						  add(bg);
+
+						  var smoker:FlxSprite = new FlxSprite(0, -290);
+						  smoker.frames = Paths.getSparrowAtlas('garSmoke');
+						  smoker.setGraphicSize(Std.int(smoker.width * 1.7));
+						  smoker.alpha = 0.3;
+						  smoker.animation.addByPrefix('garsmoke', "smokey", 13);
+						  smoker.animation.play('garsmoke');
+						  smoker.scrollFactor.set(0.7, 0.7);
+						  add(smoker);
+
+						  var bgAlley:FlxSprite = new FlxSprite(-500, -200).loadGraphic(Paths.image('garStagealt'));
+						  bgAlley.antialiasing = true;
+						  bgAlley.scrollFactor.set(0.9, 0.9);
+						  bgAlley.active = false;
+						  add(bgAlley);
+
+						  var corpse:FlxSprite = new FlxSprite(-230, 540).loadGraphic(Paths.image('gardead'));
+						  corpse.antialiasing = true;
+						  corpse.scrollFactor.set(0.9, 0.9);
+						  corpse.active = false;
+						  add(corpse);
+
+					}
+		          case 'garAlleyDip':
+		          {
+		                  defaultCamZoom = 0.9;
+						  curStage = 'garAlleyDip';
+
+						  var bg:FlxSprite = new FlxSprite(-500, -170).loadGraphic(Paths.image('garStagebgRise'));
+						  bg.antialiasing = true;
+						  bg.scrollFactor.set(0.7, 0.7);
+						  bg.active = false;
+						  add(bg);
+
+						  var bgAlley:FlxSprite = new FlxSprite(-500, -200).loadGraphic(Paths.image('garStageRise'));
+						  bgAlley.antialiasing = true;
+						  bgAlley.scrollFactor.set(0.9, 0.9);
+						  bgAlley.active = false;
+						  add(bgAlley);
+
+						  var corpse:FlxSprite = new FlxSprite(-230, 540).loadGraphic(Paths.image('gardead'));
+						  corpse.antialiasing = true;
+						  corpse.scrollFactor.set(0.9, 0.9);
+						  corpse.active = false;
+						  add(corpse);
 					}
 			case 'school':
 			{
@@ -877,7 +960,7 @@ class PlayState extends MusicBeatState
 		
 		var isBside:Bool = SONG.song.toLowerCase().contains('b-side'); // leaks for the people who read source code lol!
 		
-		var gfVersion:String = 'gf';
+		var gfVersion:String = SONG.gfVersion;
 
 		switch (SONG.gfVersion)
 		{
@@ -889,7 +972,7 @@ class PlayState extends MusicBeatState
 				gfVersion = 'gf-pixel';
 			case 'gf-crucified':
 				gfVersion = 'gf-crucified';
-			case 'gf-whitty':
+			case 'whitty':
 				gfVersion = 'gf-whitty';
 			default:
 				gfVersion = 'gf';
@@ -1011,6 +1094,14 @@ class PlayState extends MusicBeatState
 				gf.y += 140;
 				boyfriend.x += 80;
 				boyfriend.y += 140;
+			case 'garAlley':
+				boyfriend.x += 50;
+			case 'garAlleyDead':
+				// evilTrail.changeValuesEnabled(false, false, false, false);
+				// evilTrail.changeGraphic()
+				// add(evilTrail);
+				// evilTrail.scrollFactor.set(1.1, 1.1);
+				boyfriend.x += 50;
 		}
 		
 		if (isBside)
@@ -1029,15 +1120,15 @@ class PlayState extends MusicBeatState
 
 		add(dad);
 		add(boyfriend);
-		if (loadRep)
+		if (curStage == 'garAlleyDead')
 		{
-			FlxG.watch.addQuick('rep rpesses',repPresses);
-			FlxG.watch.addQuick('rep releases',repReleases);
-			
-			FlxG.save.data.botplay = true;
-			FlxG.save.data.scrollSpeed = rep.replay.noteSpeed;
-			FlxG.save.data.downscroll = rep.replay.isDownscroll;
-			// FlxG.watch.addQuick('Queued',inputsQueued);
+			var smoke:FlxSprite = new FlxSprite(0, 0);
+			smoke.frames = Paths.getSparrowAtlas('garSmoke');
+			smoke.setGraphicSize(Std.int(smoke.width * 1.6));
+			smoke.animation.addByPrefix('garsmoke', "smokey", 15);
+			smoke.animation.play('garsmoke');
+			smoke.scrollFactor.set(1.1, 1.1);
+			add(smoke);
 		}
 
 		var doof:DialogueBox = new DialogueBox(false, dialogue);
@@ -1122,6 +1213,11 @@ class PlayState extends MusicBeatState
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
 		healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
+
+		if(SONG.song.toLowerCase()=='headache' || SONG.song.toLowerCase()=='nerves' || SONG.song.toLowerCase()=='release' || SONG.song.toLowerCase()=='fading'  )
+		{
+			healthBar.createFilledBar(0xFF8E40A5, 0xFF66FF33);
+		}
 		// healthBar
 		add(healthBar);
 
@@ -4101,7 +4197,37 @@ class PlayState extends MusicBeatState
 				case 2943 | 2946 | 2948 | 2950 | 2452 | 2454:
 					dad.alpha -= 0.2;
 			}
-	//}
+			
+		if (dad.curCharacter == 'garcellodead' && SONG.song.toLowerCase() == 'release')
+		{
+			if (curStep == 838)
+			{
+				dad.playAnim('garTightBars', true);
+			}
+		}
+
+		if (dad.curCharacter == 'garcelloghosty' && SONG.song.toLowerCase() == 'fading')
+		{
+			if (curStep == 247)
+			{
+				dad.playAnim('garFarewell', true);
+			}
+		}
+
+		if (dad.curCharacter == 'garcelloghosty' && SONG.song.toLowerCase() == 'fading')
+		{
+			if (curStep == 240)
+			{
+				new FlxTimer().start(0.1, function(tmr:FlxTimer)
+				{
+					dad.alpha -= 0.05;
+					iconP2.alpha -= 0.05;
+
+					if (dad.alpha > 0)
+					{
+						tmr.reset(0.1);
+					}
+				}
 
 		if (executeModchart && luaModchart != null)
 		{
