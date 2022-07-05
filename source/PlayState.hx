@@ -815,7 +815,6 @@ class PlayState extends MusicBeatState
 			ZardyBackground.scrollFactor.set(0.9, 0.9);
 			ZardyBackground.animation.play('Maze');
 			add(ZardyBackground);
-		}
 			}
 			case 'stage':
 				{
