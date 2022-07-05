@@ -17,6 +17,7 @@ class HealthIcon extends FlxSprite
 
 		antialiasing = true;
 		animation.add('bf', [0, 1], 0, false, isPlayer);
+		animation.add('bf-bside', [0, 1], 0, false, isPlayer);
 		animation.add('bf-car', [0, 1], 0, false, isPlayer);
 		animation.add('bf-christmas', [0, 1], 0, false, isPlayer);
 		animation.add('bf-pixel', [21, 21], 0, false, isPlayer);
@@ -26,12 +27,25 @@ class HealthIcon extends FlxSprite
 		animation.add('mom-car', [6, 7], 0, false, isPlayer);
 		animation.add('tankman', [8, 9], 0, false, isPlayer);
 		animation.add('face', [10, 11], 0, false, isPlayer);
+		animation.add('wide', [10, 11], 0, false, isPlayer); // W I D E
 		animation.add('dad', [12, 13], 0, false, isPlayer);
 		animation.add('senpai', [22, 22], 0, false, isPlayer);
 		animation.add('senpai-angry', [22, 22], 0, false, isPlayer);
 		animation.add('spirit', [23, 23], 0, false, isPlayer);
 		animation.add('bf-old', [14, 15], 0, false, isPlayer);
 		animation.add('gf', [16], 0, false, isPlayer);
+		animation.add('gf-whitty', [16], 0, false, isPlayer);
+		animation.add('gf-whitty-zoom', [16], 0, false, isPlayer);
+		animation.add('gf-whitty-bside', [16], 0, false, isPlayer);
+		animation.add('gf-crucified', [16], 0, false, isPlayer);
+		animation.add('whitty', [24, 25], 0, false, isPlayer);
+		animation.add('whittyBSide', [24, 25], 0, false, isPlayer);
+		animation.add('whittyBSideCrazy', [26, 27], 0, false, isPlayer);
+		animation.add('whittyCrazy', [26, 27], 0, false, isPlayer);
+		animation.add('sky', [28, 29], 0, false, isPlayer);
+		animation.add('sky-annoyed', [28, 29], 0, false, isPlayer);
+		animation.add('sky-mad', [30], 0, false, isPlayer);
+		animation.add('zardy', [31, 32], 0, false, isPlayer);
 		animation.add('gf-christmas', [16], 0, false, isPlayer);
 		animation.add('gf-pixel', [16], 0, false, isPlayer);
 		animation.add('parents-christmas', [17, 18], 0, false, isPlayer);
