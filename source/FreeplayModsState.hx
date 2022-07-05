@@ -17,7 +17,7 @@ import Discord.DiscordClient;
 
 using StringTools;
 
-class FreeplayState extends MusicBeatState
+class FreeplayModsState extends MusicBeatState
 {
 	var songs:Array<SongMetadata> = [];
 
@@ -55,7 +55,7 @@ class FreeplayState extends MusicBeatState
 
 		 #if windows
 		 // Updating Discord Rich Presence
-		 DiscordClient.changePresence("In the Freeplay Menu", null);
+		 DiscordClient.changePresence("In the FreeplayMods Menu", null);
 		 #end
 
 		var isDebug:Bool = false;
