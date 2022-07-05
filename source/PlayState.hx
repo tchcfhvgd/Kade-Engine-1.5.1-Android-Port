@@ -87,6 +87,7 @@ class PlayState extends MusicBeatState
 
 	public static var rep:Replay;
 	public static var loadRep:Bool = false;
+	public static var alreadyCutscened:Bool = false;
 
 	public static var noteBools:Array<Bool> = [false, false, false, false];
 
@@ -242,6 +243,8 @@ class PlayState extends MusicBeatState
 		bads = 0;
 		shits = 0;
 		goods = 0;
+		
+		swaying = false;
 
 		misses = 0;
 
@@ -1234,12 +1237,12 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
-				case 'foolhardy':
+				/*case 'foolhardy':
 					dad.alpha = 0;
 					if (!poggin)
 						pogginIntro(doof);
 					else
-						startCountdown();
+						startCountdown();*/
 					case 'lo-fight':
 						trace('lo-fight animation');
 						whittyAnimation(doof, false);
@@ -1937,6 +1940,7 @@ class PlayState extends MusicBeatState
 	var previousFrameTime:Int = 0;
 	var lastReportedPlayheadPosition:Int = 0;
 	var songTime:Float = 0;
+	var theFunneNumber:Float = 1;
 
 
 	var songStarted = false;
@@ -3219,7 +3223,7 @@ class PlayState extends MusicBeatState
 						vocals.pause();
 						Conductor.songPosition = 0;
 						paused = true;
-						goin = false;
+						//goin = false;
 						/*var bgg:FlxSprite = new FlxSprite(0, 0);
 						bgg.scrollFactor.set();
 						bgg.loadGraphic(Paths.image('sky/skybg'));
@@ -4069,6 +4073,8 @@ class PlayState extends MusicBeatState
 	}
 
 	var danced:Bool = false;
+	
+	var swaying = false;
 
 	override function stepHit()
 	{
