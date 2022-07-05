@@ -1,5 +1,6 @@
 package;
 
+import ZardyDialogBox.ZardyDialogueBox;
 import flixel.input.keyboard.FlxKey;
 import haxe.Exception;
 import openfl.geom.Matrix;
@@ -197,7 +198,6 @@ class PlayState extends MusicBeatState
 
 	public static var theFunne:Bool = true;
 	var funneEffect:FlxSprite;
-	var inCutscene:Bool = false;
 	var wBg:FlxSprite;
 	var nwBg:FlxSprite;
 	var wstageFront:FlxSprite;
