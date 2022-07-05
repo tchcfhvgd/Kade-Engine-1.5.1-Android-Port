@@ -4204,6 +4204,7 @@ class PlayState extends MusicBeatState
 			{
 				dad.playAnim('garTightBars', true);
 			}
+		}
 
 		/*if (dad.curCharacter == 'garcelloghosty' && SONG.song.toLowerCase() == 'fading')
 		{
@@ -4224,7 +4225,7 @@ class PlayState extends MusicBeatState
 					if (dad.alpha > 0)
 					{
 						tmr.reset(0.1);
-					}*/.
+					}*/
 
 		if (executeModchart && luaModchart != null)
 		{
