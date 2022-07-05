@@ -695,7 +695,7 @@ class PlayState extends MusicBeatState
 								add(waveSpriteFG);
 						*/
 			}
-			case 'wife-forever':
+			case 'theShift':
 			{
 					daPixelZoom = 1;
 					defaultCamZoom = 0.9;
@@ -712,11 +712,11 @@ class PlayState extends MusicBeatState
 					add(shiftbg);
 					
 			}
-			case 'sky':
+			case 'theShiftAlt':
 			{
 					daPixelZoom = 1;
 					defaultCamZoom = 0.9;
-					curStage = 'theShift';
+					curStage = 'theShiftAlt';
 					shiftbg = new FlxSprite( -388.05, -232);
 					shiftbg.frames = Paths.getSparrowAtlas("sky/bg_annoyed");
 					shiftbg.animation.addByIndices("idle", "bg2",[5],"", 24, false);
@@ -730,7 +730,7 @@ class PlayState extends MusicBeatState
 					add(shiftbg);
 					
 			}
-			case 'manifest':
+			case 'theManifest':
 			{
 					daPixelZoom = 1;
 					defaultCamZoom = 0.9;
@@ -970,7 +970,7 @@ class PlayState extends MusicBeatState
 			case 'mallEvil':
 				boyfriend.x += 320;
 				dad.y -= 80;
-			case 'theShift':
+			case 'theShift' | 'theShiftAlt':
 				boyfriend.x = 828.75;
 				boyfriend.y = 265.65;
 				dad.x = 30.15;
@@ -4203,7 +4203,7 @@ class PlayState extends MusicBeatState
 		{
 			gf.dance();
 			if(sez){
-			if (curStage == "theShift") shiftbg.animation.play("bop");
+			if (curStage == "theShift" || curStage == "theShiftAlt") shiftbg.animation.play("bop");
 			if (curStage == "theManifest"){
 				shiftbg.animation.play("bop");
 				floor.animation.play("bop");
