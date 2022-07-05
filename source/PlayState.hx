@@ -4204,7 +4204,6 @@ class PlayState extends MusicBeatState
 			{
 				dad.playAnim('garTightBars', true);
 			}
-		}
 
 		if (dad.curCharacter == 'garcelloghosty' && SONG.song.toLowerCase() == 'fading')
 		{
@@ -4212,7 +4211,6 @@ class PlayState extends MusicBeatState
 			{
 				dad.playAnim('garFarewell', true);
 			}
-		}
 
 		if (dad.curCharacter == 'garcelloghosty' && SONG.song.toLowerCase() == 'fading')
 		{
