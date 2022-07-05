@@ -4095,7 +4095,7 @@ class PlayState extends MusicBeatState
 				case 2943 | 2946 | 2948 | 2950 | 2452 | 2454:
 					dad.alpha -= 0.2;
 			}
-	}
+	//}
 
 		if (executeModchart && luaModchart != null)
 		{
