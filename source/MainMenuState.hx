@@ -238,7 +238,7 @@ class MainMenuState extends MusicBeatState
 				trace("Freeplay Menu Selected");
 
                         case 'mods':
-				FlxG.switchState(new FreeplayModsState.hx());
+				FlxG.switchState(new FreeplayModsState());
 
 			case 'options':
 				FlxG.switchState(new OptionsMenu());
