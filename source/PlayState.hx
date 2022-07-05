@@ -4227,7 +4227,6 @@ class PlayState extends MusicBeatState
 					{
 						tmr.reset(0.1);
 					}
-				}
 
 		if (executeModchart && luaModchart != null)
 		{
