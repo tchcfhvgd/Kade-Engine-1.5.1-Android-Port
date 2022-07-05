@@ -804,7 +804,7 @@ class PlayState extends MusicBeatState
             // bg.setGraphicSize(Std.int(bg.width * 2.5));
             // bg.updateHitbox();   
 		}
-		case 'zardystage'
+		case 'zardystage':
 		{
 			defaultCamZoom = 0.9;
 			curStage = 'zardystage';
