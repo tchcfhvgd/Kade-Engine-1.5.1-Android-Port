@@ -1,0 +1,8 @@
+Wife-Forever:sky:1
+Sky:sky:1
+Manifest:sky-mad:1
+Lo-Fight:whitty:2
+Overhead:whitty:2
+Ballistic:whittyCrazy:2
+Ballistic-Old:whittyCrazy:2
+Foolhardy:zardy:3
