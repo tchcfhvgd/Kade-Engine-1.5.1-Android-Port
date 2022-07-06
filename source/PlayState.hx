@@ -4180,7 +4180,7 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}
 		
-		if (curStep != lastStep)
+		/*if (curStep != lastStep)
 			switch(curStep)
 			{
 				case 2426:
@@ -4196,7 +4196,7 @@ class PlayState extends MusicBeatState
 					FlxG.camera.stopFX();
 				case 2943 | 2946 | 2948 | 2950 | 2452 | 2454:
 					dad.alpha -= 0.2;
-			}
+			}*/
 			
 		if (dad.curCharacter == 'garcellodead' && SONG.song.toLowerCase() == 'release')
 		{
