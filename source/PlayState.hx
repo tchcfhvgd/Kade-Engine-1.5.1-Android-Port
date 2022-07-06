@@ -1,6 +1,6 @@
 package;
 
-import ZardyDialogBox.ZardyDialogueBox;
+//import ZardyDialogBox.ZardyDialogueBox;
 import flixel.input.keyboard.FlxKey;
 import haxe.Exception;
 import openfl.geom.Matrix;
@@ -111,7 +111,7 @@ class PlayState extends MusicBeatState
 	public static var dad:Character;
 	public static var gf:Character;
 	public static var boyfriend:Boyfriend;
-	public static var ZardyBackground:FlxSprite;
+	//public static var ZardyBackground:FlxSprite;
 	private var garcellotired:Character;
 
 	public var notes:FlxTypedGroup<Note>;
@@ -889,7 +889,7 @@ class PlayState extends MusicBeatState
             }
             // bg.setGraphicSize(Std.int(bg.width * 2.5));
             // bg.updateHitbox();   
-		}
+		/*}
 		case 'zardystage':
 		{
 			defaultCamZoom = 0.9;
@@ -900,7 +900,7 @@ class PlayState extends MusicBeatState
 			ZardyBackground.antialiasing = true;
 			ZardyBackground.scrollFactor.set(0.9, 0.9);
 			ZardyBackground.animation.play('Maze');
-			add(ZardyBackground);
+			add(ZardyBackground);*/
 			}
 			case 'stage':
 				{
@@ -1089,11 +1089,11 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
-			case 'zardystage':
+			/*case 'zardystage':
 				dad.y += 140;
 				gf.y += 140;
 				boyfriend.x += 80;
-				boyfriend.y += 140;
+				boyfriend.y += 140;*/
 			case 'garAlley':
 				boyfriend.x += 50;
 			case 'garAlleyDead':
@@ -1429,7 +1429,7 @@ class PlayState extends MusicBeatState
 		super.create();
 	}
 
-	function pogginIntro(ZardyDialogBox:ZardyDialogueBox):Void
+	/*function pogginIntro(ZardyDialogBox:ZardyDialogueBox):Void
 	{
 		poggin = true;
 		new FlxTimer().start(0.3, function(tmr:FlxTimer)
@@ -1441,7 +1441,7 @@ class PlayState extends MusicBeatState
 						add(ZardyDialogBox);
 					}
 			});
-	}
+	}*/
 
 	function turnToCrazyWhitty()
 	{
@@ -2456,11 +2456,11 @@ class PlayState extends MusicBeatState
 		perfectMode = false;
 		#end
 
-		if (ZardyBackground.animation.finished)
+		/*if (ZardyBackground.animation.finished)
 		{
 			trace('playBG');
 			ZardyBackground.animation.play('Maze');
-		}
+		}*/
 
 		if (FlxG.save.data.botplay && FlxG.keys.justPressed.ONE)
 			camHUD.visible = !camHUD.visible;
