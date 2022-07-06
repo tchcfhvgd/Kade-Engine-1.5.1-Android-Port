@@ -3584,6 +3584,15 @@
         "mustHitSection": true
       },
       {
+        "lengthInSteps": 16,
+        "typeOfSection": 0,
+        "sectionNotes": [],
+        "altAnim": false,
+        "bpm": 120,
+        "changeBPM": false,
+        "mustHitSection": true
+      },
+      {
         "sectionNotes": [],
         "typeOfSection": 0,
         "lengthInSteps": 16,
@@ -3608,6 +3617,6 @@
     "sections": 0,
     "needsVoices": true,
     "bpm": 120,
-    "speed": 1.6
+    "speed": 1.4
   }
 }
