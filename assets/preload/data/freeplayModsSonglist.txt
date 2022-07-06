@@ -6,3 +6,7 @@ Overhead:whitty:2
 Ballistic:whittyCrazy:2
 Ballistic-Old:whittyCrazy:2
 Foolhardy:zardy:3
+Headache:garcello:4
+Nerves:garcellotired:4
+Release:garcellodead:4
+Fading:garcelloghosty:4
