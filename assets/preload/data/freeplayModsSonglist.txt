@@ -5,8 +5,9 @@ Lo-Fight:whitty:2
 Overhead:whitty:2
 Ballistic:whittyCrazy:2
 Ballistic-Old:whittyCrazy:2
-Foolhardy:zardy:3
-Headache:garcello:4
-Nerves:garcellotired:4
-Release:garcellodead:4
-Fading:garcelloghosty:4
+Headache:garcello:3
+Nerves:garcellotired:3
+Release:garcellodead:3
+Fading:garcelloghosty:3
+Detention-(beastlychip):principal:4
+Detention-(yoisabo):principal:4
