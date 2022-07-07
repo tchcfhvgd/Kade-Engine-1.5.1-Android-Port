@@ -82,6 +82,7 @@ class HealthIcon extends FlxSprite
 		scrollFactor.set();
 	}
 
+                }
 		if(char != this.character)
 		{
 			#if desktop
