@@ -13,6 +13,7 @@ class HealthIcon extends FlxSprite
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
+		antialiasing = true;
 		this.char = char;
 		switch (char) {
 		case 'core':
@@ -28,7 +29,6 @@ class HealthIcon extends FlxSprite
          default:
 		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
 
-		antialiasing = true;
 		animation.add('bf', [0, 1], 0, false, isPlayer);
 		animation.add('bf-bside', [0, 1], 0, false, isPlayer);
 		animation.add('bf-car', [0, 1], 0, false, isPlayer);
@@ -79,6 +79,7 @@ class HealthIcon extends FlxSprite
 		scrollFactor.set();
 	}
 
+        }
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
