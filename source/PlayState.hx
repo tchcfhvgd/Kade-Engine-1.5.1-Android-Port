@@ -4280,7 +4280,7 @@ class PlayState extends MusicBeatState
 				// vo embora
 				if (curStep == 1824) //ADEUS MUNDO 1
 					{
-						FlxTween.tween(dadGroup, {x: -800}, 1.8, {ease: FlxEase.expoIn});
+						FlxTween.tween(dad, {x: -800}, 1.8, {ease: FlxEase.expoIn});
 					}
 				//BALDI
 				if (curStep == 928) //VEIO TA ON vem
@@ -4612,7 +4612,7 @@ class PlayState extends MusicBeatState
 
 				if (curStep == 2360) //ADEUS MUNDO 2
 					{
-						FlxTween.tween(dadGroup, {x: -1000}, 2, {ease: FlxEase.expoIn});
+						FlxTween.tween(dad, {x: -1000}, 2, {ease: FlxEase.expoIn});
 					}
 
 			}
