@@ -24,9 +24,8 @@ class HealthIcon extends FlxSprite
 		case 'principal':
 			loadGraphic(Paths.image('icons/icon-principal'), true, 150, 150);
 			animation.add('principal', [0, 1], 0, false, isPlayer);
-                }
 		
-                default:
+         default:
 		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
 
 		antialiasing = true;
