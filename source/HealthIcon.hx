@@ -13,22 +13,10 @@ class HealthIcon extends FlxSprite
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
-		antialiasing = true;
-		this.char = char;
-		switch (char) {
-		case 'core':
-			loadGraphic(Paths.image('icons/icon-core'), true, 150, 150);
-			animation.add('core', [0, 1], 0, false, isPlayer);
-		case 'baldi':
-			loadGraphic(Paths.image('icons/icon-principal'), true, 150, 150);
-			animation.add('baldi', [0, 1], 0, false, isPlayer);
-		case 'principal':
-			loadGraphic(Paths.image('icons/icon-principal'), true, 150, 150);
-			animation.add('principal', [0, 1], 0, false, isPlayer);
 		
-         default:
 		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
 
+		antialiasing = true;
 		animation.add('bf', [0, 1], 0, false, isPlayer);
 		animation.add('bf-bside', [0, 1], 0, false, isPlayer);
 		animation.add('bf-car', [0, 1], 0, false, isPlayer);
@@ -40,6 +28,9 @@ class HealthIcon extends FlxSprite
 		animation.add('mom-car', [6, 7], 0, false, isPlayer);
 		animation.add('tankman', [8, 9], 0, false, isPlayer);
 		animation.add('face', [10, 11], 0, false, isPlayer);
+                animation.add('core', [10, 11], 0, false, isPlayer);
+                animation.add('principal', [10, 11], 0, false, isPlayer);
+                animation.add('baldi', [10, 11], 0, false, isPlayer);
 		animation.add('wide', [10, 11], 0, false, isPlayer); // W I D E
 		animation.add('dad', [12, 13], 0, false, isPlayer);
 		animation.add('senpai', [22, 22], 0, false, isPlayer);
