@@ -66,6 +66,7 @@ class HealthIcon extends FlxSprite
 		scrollFactor.set();
 	}
 
+                }
 		if(char != this.character){ //thx Tr1ngle Engine
 			
 			if(loadGraphic(Paths.image("icons/icon-" + char)).width >= 450)
