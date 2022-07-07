@@ -252,6 +252,84 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 0, -30);
 
 				playAnim('idle');
+
+			case 'baldi':
+				tex = Paths.getSparrowAtlas('characters/baldi');
+				frames = tex;
+				animation.addByPrefix('idle', 'baldidle', 24);
+				
+				addOffset('idle', 0, 0);
+
+				playAnim('idle');
+				
+			case 'core':
+				tex = Paths.getSparrowAtlas('characters/CORE');
+				frames = tex;
+				animation.addByPrefix('idle', 'CORE IDLE', 24);
+				animation.addByPrefix('singUP', 'CORE UP', 24);
+				animation.addByPrefix('singUP-alt', 'CORE SCREAM UP', 24);
+				animation.addByPrefix('singLEFT', 'CORE RIGHT', 24);
+				animation.addByPrefix('singRIGHT-alt', 'CORE SCREAM RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'CORE DOWN', 24);
+				animation.addByPrefix('singDOWN-alt', 'CORE SCREAM DOWN', 24);
+				animation.addByPrefix('singRIGHT', 'CORE LEFT', 24);
+				animation.addByPrefix('final', 'CORE FINAL', 24);
+				
+				addOffset('idle', -5, 0);
+				addOffset("singUP", -66, 35);
+				addOffset("singUP-alt", -39, 35);
+				addOffset("singRIGHT", 0, -15);
+				addOffset("singRIGHT-alt", 1, -15);
+				addOffset("singLEFT", 7, 5);
+				addOffset("singDOWN", -37, -33);
+				addOffset("singDOWN-alt", -37, -32);
+                                addOffset("final", 1, 15);
+
+				playAnim('idle');
+
+				flipX = true;
+
+			case 'playtime':
+				tex = Paths.getSparrowAtlas('characters/playtime');
+				frames = tex;
+				animation.addByPrefix('idle', 'play idle', 24);
+				animation.addByPrefix('singUP', 'play up', 24);
+				animation.addByPrefix('singRIGHT', 'play right', 24);
+				animation.addByPrefix('singDOWN', 'play down', 24);
+				animation.addByPrefix('singLEFT', 'play left', 24);
+				animation.addByPrefix('sad', 'play sad', 24);
+
+				addOffset('idle', 0, 0);
+				addOffset("singUP", -10, 184);
+				addOffset("singRIGHT", -48, 0);
+				addOffset("singLEFT", 180, -54);
+				addOffset("singDOWN", 35, 12);
+                                addOffset("sad", -20, -26);
+
+				playAnim('idle');
+
+			case 'principal':
+				tex = Paths.getSparrowAtlas('characters/PRINCIPAL');
+				frames = tex;
+				animation.addByPrefix('idle', 'PRINCIPAL IDLE', 24);
+				animation.addByPrefix('singUP', 'PRINCIPAL UP', 24);
+				animation.addByPrefix('singRIGHT', 'PRINCIPAL RIGHT', 24);
+				animation.addByPrefix('singRIGHT-alt', 'PRINCIPAL W RIGHT', 24);
+				animation.addByPrefix('singDOWN', 'PRINCIPAL DOWN', 24);
+				animation.addByPrefix('singDOWN-alt', 'PRINCIPAL W DOWN', 24);
+				animation.addByPrefix('singLEFT', 'PRINCIPAL LEFT', 24);
+				animation.addByPrefix('singLEFT-alt', 'PRINCIPAL W LEFT', 24);
+
+				addOffset('idle', 0, 0);
+				addOffset("singUP", -61, 54);
+				addOffset("singRIGHT", -107, -7);
+				addOffset("singRIGHT-alt", -78, 0);
+				addOffset("singLEFT", 112, -10);
+				addOffset("singLEFT-alt", 16, 0);
+				addOffset("singDOWN", 10, -35);
+				addOffset("singDOWN-alt", -2, -14);
+
+				playAnim('idle');
 				
 			case 'garcello':
 				// GARCELLO ANIMATION LOADING CODE
