@@ -418,24 +418,6 @@ class Character extends FlxSprite
 
 				playAnim('idle');
 				
-			case 'zardy':
-				// DAD ANIMATION LOADING CODE
-				tex = Paths.getSparrowAtlas('Zardy','ChallengeWeek');
-				frames = tex;
-				animation.addByPrefix('idle', 'Idle', 14);
-				animation.addByPrefix('singUP', 'Sing Up', 24);
-				animation.addByPrefix('singRIGHT', 'Sing Right', 24);
-				animation.addByPrefix('singDOWN', 'Sing Down', 24);
-				animation.addByPrefix('singLEFT', 'Sing Left', 24);
-
-				addOffset('idle');
-				addOffset("singUP", 20, -10);
-				addOffset("singRIGHT", 5, 5);
-				addOffset("singLEFT", 210, 25);
-				addOffset("singDOWN", 8, -45);
-
-				playAnim('idle');
-				
 			case 'wide': // W I D E
 					tex = Paths.getSparrowAtlas('wide', 'bonusWeek');
 					frames = tex;
