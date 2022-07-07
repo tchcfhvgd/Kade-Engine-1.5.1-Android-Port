@@ -28,9 +28,9 @@ class HealthIcon extends FlxSprite
 		animation.add('mom-car', [6, 7], 0, false, isPlayer);
 		animation.add('tankman', [8, 9], 0, false, isPlayer);
 		animation.add('face', [10, 11], 0, false, isPlayer);
-                animation.add('core', [10, 11], 0, false, isPlayer);
-                animation.add('principal', [10, 11], 0, false, isPlayer);
-                animation.add('baldi', [10, 11], 0, false, isPlayer);
+                animation.add('core', [37, 38], 0, false, isPlayer);
+                animation.add('principal', [39, 40], 0, false, isPlayer);
+                animation.add('baldi', [39, 40], 0, false, isPlayer);
 		animation.add('wide', [10, 11], 0, false, isPlayer); // W I D E
 		animation.add('dad', [12, 13], 0, false, isPlayer);
 		animation.add('senpai', [22, 22], 0, false, isPlayer);
@@ -49,11 +49,10 @@ class HealthIcon extends FlxSprite
 		animation.add('sky', [28, 29], 0, false, isPlayer);
 		animation.add('sky-annoyed', [28, 29], 0, false, isPlayer);
 		animation.add('sky-mad', [30], 0, false, isPlayer);
-		animation.add('zardy', [31, 32], 0, false, isPlayer);
-		animation.add('garcello', [33, 34], 0, false, isPlayer);
-		animation.add('garcellotired', [35, 36], 0, false, isPlayer);
-		animation.add('garcellodead', [37, 38], 0, false, isPlayer);
-		animation.add('garcelloghosty', [38], 0, false, isPlayer);
+		animation.add('garcello', [31, 32], 0, false, isPlayer);
+		animation.add('garcellotired', [33, 34], 0, false, isPlayer);
+		animation.add('garcellodead', [35, 36], 0, false, isPlayer);
+		animation.add('garcelloghosty', [36], 0, false, isPlayer);
 		animation.add('gf-christmas', [16], 0, false, isPlayer);
 		animation.add('gf-pixel', [16], 0, false, isPlayer);
 		animation.add('parents-christmas', [17, 18], 0, false, isPlayer);
