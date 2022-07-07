@@ -110,7 +110,6 @@ class PlayState extends MusicBeatState
 	public static var dad:Character;
 	public static var gf:Character;
 	public static var boyfriend:Boyfriend;
-	public static var ZardyBackground:FlxSprite;
 	private var garcellotired:Character;
 
 	public var notes:FlxTypedGroup<Note>;
@@ -898,18 +897,6 @@ class PlayState extends MusicBeatState
             }
             // bg.setGraphicSize(Std.int(bg.width * 2.5));
             // bg.updateHitbox();   
-		}
-		case 'zardystage':
-		{
-			defaultCamZoom = 0.9;
-			curStage = 'zardystage';
-			ZardyBackground = new FlxSprite(-600, -200);
-			ZardyBackground.frames = Paths.getSparrowAtlas('Maze','ChallengeWeek');
-			ZardyBackground.animation.addByPrefix('Maze','Stage', 16);
-			ZardyBackground.antialiasing = true;
-			ZardyBackground.scrollFactor.set(0.9, 0.9);
-			ZardyBackground.animation.play('Maze');
-			add(ZardyBackground);
 			}
 			case 'mamar': //Week MAMAR
 			{
@@ -1089,10 +1076,7 @@ class PlayState extends MusicBeatState
 			case 'spirit':
 				dad.x -= 150;
 				dad.y += 100;
-				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);
-			case 'zardy':
-				camPos.set(dad.getGraphicMidpoint().x, dad.getGraphicMidpoint().y + 240);
-				dad.x -= 80;
+				camPos.set(dad.getGraphicMidpoint().x + 300, dad.getGraphicMidpoint().y);;
 		}
 
 
@@ -1150,11 +1134,6 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
-			case 'zardystage':
-				dad.y += 140;
-				gf.y += 140;
-				boyfriend.x += 80;
-				boyfriend.y += 140;
 			case 'garAlley':
 				boyfriend.x += 50;
 			case 'garAlleyDead':
@@ -2502,12 +2481,6 @@ class PlayState extends MusicBeatState
 		#if !debug
 		perfectMode = false;
 		#end
-
-		if (ZardyBackground.animation.finished)
-		{
-			trace('playBG');
-			ZardyBackground.animation.play('Maze');
-		}
 
 		if (FlxG.save.data.botplay && FlxG.keys.justPressed.ONE)
 			camHUD.visible = !camHUD.visible;
@@ -4226,24 +4199,6 @@ class PlayState extends MusicBeatState
 		{
 			resyncVocals();
 		}
-		
-		if (curStep != lastStep)
-			switch(curStep)
-			{
-				case 2426:
-					ZardyBackground.frames = Paths.getSparrowAtlas('Maze','ChallengeWeek');
-					ZardyBackground.animation.addByPrefix('Maze','Stage',20);
-					ZardyBackground.animation.play('Maze');
-					swaying = true;
-				case 2427 | 2428 | 2429 | 2430:
-					FlxG.camera.shake(0.05);
-					dad.alpha -= 0.05;
-				case 2432 | 2434 | 2435 | 2436 | 2437 | 2438 | 2439 | 2440:
-					dad.alpha = 0.6;
-					FlxG.camera.stopFX();
-				case 2943 | 2946 | 2948 | 2950 | 2452 | 2454:
-					dad.alpha -= 0.2;
-			}
 			
 		if (dad.curCharacter == 'garcellodead' && SONG.song.toLowerCase() == 'release')
 		{
