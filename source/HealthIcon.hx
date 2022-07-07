@@ -7,9 +7,7 @@ class HealthIcon extends FlxSprite
 	/**
 	 * Used for FreeplayState! If you use it elsewhere, prob gonna annoying
 	 */
-	public var sprTracker:FlxSprite;
-	public var isPlayer:Bool;
-	public var character:String;
+	public var sprTracker:FlxSprite;;
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
@@ -61,24 +59,6 @@ class HealthIcon extends FlxSprite
 		animation.add('monster-christmas', [19, 20], 0, false, isPlayer);
 		animation.play(char);
 
-		if(char != this.character){ //thx Tr1ngle Engine
-			
-			if(loadGraphic(Paths.image("icons/icon-" + char)).width >= 450)
-			{
-				loadGraphic(Paths.image("icons/icon-" + char), true, 150, 150);
-				animation.add(char, [0, 1, 2], 0, false, this.isPlayer);
-			}
-			else if (loadGraphic(Paths.image("icons/icon-" + char)).width <= 300)
-			{
-				loadGraphic(Paths.image("icons/icon-" + char), true, 150, 150);
-				animation.add(char, [0, 1], 0, false, this.isPlayer);
-			}
-			animation.play(char);
-			this.character = char;
-		}
-	}
-
-                }
 		switch(char)
 		{
 			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':
