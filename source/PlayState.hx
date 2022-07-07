@@ -1,6 +1,5 @@
 package;
 
-//import ZardyDialogBox.ZardyDialogueBox;
 import flixel.input.keyboard.FlxKey;
 import haxe.Exception;
 import openfl.geom.Matrix;
@@ -111,7 +110,7 @@ class PlayState extends MusicBeatState
 	public static var dad:Character;
 	public static var gf:Character;
 	public static var boyfriend:Boyfriend;
-	//public static var ZardyBackground:FlxSprite;
+	public static var ZardyBackground:FlxSprite;
 	private var garcellotired:Character;
 
 	public var notes:FlxTypedGroup<Note>;
@@ -176,6 +175,16 @@ class PlayState extends MusicBeatState
 	var upperBoppers:FlxSprite;
 	var bottomBoppers:FlxSprite;
 	var santa:FlxSprite;
+	
+	var dabg:BGSprite;
+	var redbg:BGSprite;
+	var bgred:BGSprite;
+
+
+	var veio:FlxSprite;
+	var gordin:FlxSprite;
+	var menina:FlxSprite;
+	var veiobat:Int = 1;
 
 	var fc:Bool = true;
 
@@ -889,7 +898,7 @@ class PlayState extends MusicBeatState
             }
             // bg.setGraphicSize(Std.int(bg.width * 2.5));
             // bg.updateHitbox();   
-		/*}
+		}
 		case 'zardystage':
 		{
 			defaultCamZoom = 0.9;
@@ -900,7 +909,59 @@ class PlayState extends MusicBeatState
 			ZardyBackground.antialiasing = true;
 			ZardyBackground.scrollFactor.set(0.9, 0.9);
 			ZardyBackground.animation.play('Maze');
-			add(ZardyBackground);*/
+			add(ZardyBackground);
+			}
+			case 'mamar': //Week MAMAR
+			{
+				defaultCamZoom = 0.7;
+				var bg:BGSprite = new BGSprite('mamarbg0', 0, 0, 0.7, 0.8);
+				bg.screenCenter(XY);
+				add(bg);
+
+				bgred = new BGSprite('mamarbg0red', 0, 0, 0.7, 0.8);
+				bgred.screenCenter(XY);
+				add(bgred);
+				bgred.alpha = 0;
+				
+
+				gordin = new FlxSprite(310, 150);
+				gordin.frames = Paths.getSparrowAtlas('1st', 'week3');
+				gordin.animation.addByPrefix('bop', "1stdance", 24, false); 
+				gordin.animation.play('bop', true);
+				gordin.scrollFactor.set(0.8, 0.85);
+				gordin.antialiasing = true;
+				add(gordin);
+				gordin.alpha = 0;
+
+				menina = new FlxSprite(0, 180);
+				menina.frames = Paths.getSparrowAtlas('PLAY', 'week3');
+				menina.animation.addByPrefix('bop', "playtimedance", 24, false); 
+				menina.animation.play('bop', true);
+				menina.scrollFactor.set(0.8, 0.85);
+				menina.antialiasing = true;
+				add(menina);
+				menina.alpha = 0;
+
+				veio = new FlxSprite(800, 100);
+				veio.frames = Paths.getSparrowAtlas('BALDI', 'week3');
+				veio.animation.addByPrefix('bop', "baldidance", 24, false); 
+				veio.animation.play('bop', true);
+				veio.scrollFactor.set(0.8, 0.85);
+				veio.antialiasing = true;
+				add(veio);
+				veio.alpha = 0;
+
+				dabg = new BGSprite('mamarbg1', 0, 0, 0.9, 0.9);
+				dabg.screenCenter(XY);
+				
+				
+
+				redbg = new BGSprite('mamarbg2', 0, 0, 0.9, 0.9);
+				redbg.screenCenter(XY);
+				
+				redbg.alpha = 0;
+
+				gf.alpha = 0;
 			}
 			case 'stage':
 				{
@@ -1089,11 +1150,11 @@ class PlayState extends MusicBeatState
 				boyfriend.y += 220;
 				gf.x += 180;
 				gf.y += 300;
-			/*case 'zardystage':
+			case 'zardystage':
 				dad.y += 140;
 				gf.y += 140;
 				boyfriend.x += 80;
-				boyfriend.y += 140;*/
+				boyfriend.y += 140;
 			case 'garAlley':
 				boyfriend.x += 50;
 			case 'garAlleyDead':
@@ -1428,20 +1489,6 @@ class PlayState extends MusicBeatState
 
 		super.create();
 	}
-
-	/*function pogginIntro(ZardyDialogBox:ZardyDialogueBox):Void
-	{
-		poggin = true;
-		new FlxTimer().start(0.3, function(tmr:FlxTimer)
-			{
-					if (ZardyDialogBox != null)
-					{
-						trace('cutsceneee');
-						inCutscene = true;
-						add(ZardyDialogBox);
-					}
-			});
-	}*/
 
 	function turnToCrazyWhitty()
 	{
@@ -2456,11 +2503,11 @@ class PlayState extends MusicBeatState
 		perfectMode = false;
 		#end
 
-		/*if (ZardyBackground.animation.finished)
+		if (ZardyBackground.animation.finished)
 		{
 			trace('playBG');
 			ZardyBackground.animation.play('Maze');
-		}*/
+		}
 
 		if (FlxG.save.data.botplay && FlxG.keys.justPressed.ONE)
 			camHUD.visible = !camHUD.visible;
@@ -4180,7 +4227,7 @@ class PlayState extends MusicBeatState
 			resyncVocals();
 		}
 		
-		/*if (curStep != lastStep)
+		if (curStep != lastStep)
 			switch(curStep)
 			{
 				case 2426:
@@ -4196,7 +4243,7 @@ class PlayState extends MusicBeatState
 					FlxG.camera.stopFX();
 				case 2943 | 2946 | 2948 | 2950 | 2452 | 2454:
 					dad.alpha -= 0.2;
-			}*/
+			}
 			
 		if (dad.curCharacter == 'garcellodead' && SONG.song.toLowerCase() == 'release')
 		{
@@ -4226,6 +4273,349 @@ class PlayState extends MusicBeatState
 					{
 						tmr.reset(0.1);
 					}*/
+					
+		if (curSong == 'Detention (yoisabo)')
+			{
+
+				// vo embora
+				if (curStep == 1824) //ADEUS MUNDO 1
+					{
+						FlxTween.tween(dadGroup, {x: -800}, 1.8, {ease: FlxEase.expoIn});
+					}
+				//BALDI
+				if (curStep == 928) //VEIO TA ON vem
+					{
+						veio.alpha = 1;
+						veio.x = 1600;
+						FlxTween.tween(veio, {x: 800}, 2.4, {ease: FlxEase.expoOut});
+						//1056 << hora q o bagui fica no beat errado pq eu gosto de complicar tudo
+						//1504 << na hora q fica rapido
+						//1552 << na hora q fica MUITO rapido
+
+					}
+
+					if (curStep == 1056)
+						{
+							FlxTween.tween(redbg, {alpha: 1}, 0.8, {ease: FlxEase.expoInOut});
+							FlxTween.tween(bgred, {alpha: 1}, 0.8, {ease: FlxEase.expoInOut});
+							veiobat = 2;
+						}
+
+				if (curStep == 1504) //BATE
+					{
+						veiobat = 3;
+						
+						FlxTween.tween(veio, {x: -1000}, 3, {ease: FlxEase.expoIn});
+
+					}
+				
+
+					//1568 ACABAAA
+
+				if (curStep == 288) //batida 1
+					{
+						defaultCamZoom = 0.75;
+					}
+
+				if (curStep == 672) 
+					{
+						defaultCamZoom = 0.8;
+					}
+
+					//zoomzinho
+					if (curStep > 672 && curStep < 800) 
+						{
+							defaultCamZoom += 0.003;
+						}
+				//calmo
+				if (curStep == 800) 
+					{
+						defaultCamZoom = 0.65;
+					}
+
+				if (curStep == 864) 
+					{
+						defaultCamZoom = 0.7;
+					}
+
+				if (curStep == 928) 
+					{
+						defaultCamZoom = 0.75;
+					}
+
+				if (curStep == 992) 
+					{
+						defaultCamZoom = 0.8;
+					}
+
+					if (curStep == 1024) 
+						{
+							defaultCamZoom = 0.85;
+						}
+
+						if (curStep == 1046)
+							{
+								defaultCamZoom = 0.95;
+							}
+				
+
+				if (curStep == 1056) //batida 2
+					{
+						defaultCamZoom = 0.8;
+					}
+					//zoomsss
+					if (curStep == 1504) 
+						{
+							defaultCamZoom = 0.9;
+						}
+						if (curStep == 1508) 
+							{
+								defaultCamZoom = 0.8;
+							}
+					if (curStep == 1512) 
+						{
+							defaultCamZoom = 0.9;
+						}
+						if (curStep == 1516) 
+							{
+								defaultCamZoom = 0.8;
+							}
+					if (curStep == 1520) 
+						{
+							defaultCamZoom = 0.9;
+						}
+						if (curStep == 1524) 
+							{
+								defaultCamZoom = 0.8;
+							}
+					if (curStep == 1528) 
+						{
+							defaultCamZoom = 0.9;
+						}
+						if (curStep == 1532) 
+							{
+								defaultCamZoom = 0.8;
+							}
+							//cabo
+							if (curStep == 1536) 
+								{
+									defaultCamZoom = 0.9;
+								}
+					if (curStep == 1568) 
+						{
+							FlxTween.tween(redbg, {alpha: 0}, 0.2, {ease: FlxEase.expoInOut});
+							FlxTween.tween(bgred, {alpha: 0}, 0.2, {ease: FlxEase.expoInOut});
+
+							defaultCamZoom = 0.7;
+						}
+						//zoomzinho dnv
+					if (curStep > 1823) 
+						{
+							defaultCamZoom += 0.002;
+						}
+
+						
+
+			}
+		if (curSong == 'Detention (beastlychip)')
+			{
+				//veio passando
+				if (curStep == 1508)
+					{
+						veiobat = 2;
+						veio.alpha = 1;
+						veio.x = 1200;
+						FlxTween.tween(veio, {x: 900}, 0.2, {ease: FlxEase.linear});
+						veio.animation.play('bop', true);
+						
+					}
+					if (curStep == 1516)
+						{
+							
+							
+							FlxTween.tween(veio, {x: 600}, 0.2, {ease: FlxEase.linear});
+							veio.animation.play('bop', true);
+							
+						}
+						if (curStep == 1524)
+							{
+								
+								
+								FlxTween.tween(veio, {x: 300}, 0.2, {ease: FlxEase.linear});
+								veio.animation.play('bop', true);
+								
+							}
+							if (curStep == 1532)
+								{
+									
+									
+									FlxTween.tween(veio, {x: 0}, 0.2, {ease: FlxEase.linear});
+									veio.animation.play('bop', true);
+									
+								}
+								if (curStep == 1540)
+									{
+										
+										
+										FlxTween.tween(veio, {x: -300}, 0.2, {ease: FlxEase.linear});
+										veio.animation.play('bop', true);
+										
+									}
+				//a
+				if (curStep == 2)
+					{
+						
+						defaultCamZoom = 0.9;
+					}
+
+				if (curStep == 32)
+					{
+						defaultCamZoom = 0.7;
+					}
+
+				if (curStep == 160)
+					{
+						defaultCamZoom = 0.75;
+					}
+
+				if (curStep == 224)
+					{
+						defaultCamZoom = 0.8;
+					}
+
+				if (curStep == 256)
+					{
+						defaultCamZoom = 0.85;
+					}
+
+				if (curStep == 288)
+					{
+						defaultCamZoom = 0.75;
+					}
+
+				if (curStep == 400)
+					{
+						defaultCamZoom = 0.95;
+					}
+
+				if (curStep == 416)
+					{
+						defaultCamZoom = 0.75;
+					}
+
+					if (curStep == 528)
+						{
+							defaultCamZoom = 0.65;
+						}
+
+				if (curStep == 544)
+					{
+						defaultCamZoom = 0.8;
+					}
+
+					if (curStep == 784)
+						{
+							defaultCamZoom = 0.85;
+						}
+
+				if (curStep == 800)
+					{
+						defaultCamZoom = 0.75;
+					}
+
+					if (curStep == 1056)
+						{
+							defaultCamZoom = 0.6;
+						}
+
+						if (curStep == 1174)
+							{
+								defaultCamZoom = 0.7;
+							}
+
+					if (curStep == 1184)
+						{
+							defaultCamZoom = 0.6;
+						}
+
+					if (curStep == 1408)
+						{
+							defaultCamZoom = 0.75;
+						}
+
+						if (curStep == 1440)
+							{
+								defaultCamZoom = 0.6;
+							}
+
+							if (curStep == 816)
+								{
+									gordin.alpha = 1;
+									gordin.y += 400;
+									//sobe
+									FlxTween.tween(gordin, {y: 150}, 2.8, {ease: FlxEase.expoOut});
+								}
+
+					if (curStep == 1550)
+						{
+							defaultCamZoom = 0.95;
+						}
+
+
+					if (curStep == 1536) //MENINA
+						{
+							menina.alpha = 1;
+							menina.x = -800;
+							FlxTween.tween(menina, {x: 600}, 0.9, {ease: FlxEase.linear});
+						}
+
+					if (curStep == 1552) 
+						{
+							menina.scale.set(-1, 1);
+						}
+					
+						if (curStep == 1568) //batidao
+							{
+								defaultCamZoom = 0.85;
+
+								{
+									menina.scale.set(1, 1);
+									FlxTween.tween(menina, {x: 1200}, 1.4, {ease: FlxEase.linear});
+								}
+							}
+
+							//ZOOMOUT zomzim
+							if (curStep >= 1856 && curStep < 1888)
+								{
+									defaultCamZoom -= 0.007;
+								}
+
+								if (curStep == 1888) //fim
+									{
+										defaultCamZoom = 0.85;
+									}
+									//a
+					if (curStep == 2080) //fim
+						{
+							defaultCamZoom = 0.7;
+						}
+
+				if (curStep == 2190)
+					{
+						defaultCamZoom = 0.85;
+					}
+
+					if (curStep == 2208)
+						{
+							defaultCamZoom = 0.7;
+						}
+
+				if (curStep == 2360) //ADEUS MUNDO 2
+					{
+						FlxTween.tween(dadGroup, {x: -1000}, 2, {ease: FlxEase.expoIn});
+					}
+
+			}
 
 		if (executeModchart && luaModchart != null)
 		{
@@ -4321,6 +4711,19 @@ class PlayState extends MusicBeatState
 				FlxG.camera.zoom += 0.020;
 				camHUD.zoom += 0.035;
 			}
+			
+//batida 1
+		if (curSong == 'Detention (yoisabo)' && curStep >= 288 && curStep < 800 && camZooming && FlxG.camera.zoom < 1.35)
+			{
+				FlxG.camera.zoom += 0.012; 
+				camHUD.zoom += 0.03;
+			}
+//batida 2
+		if (curSong == 'Detention (yoisabo)' && curStep >= 1056 && curStep < 1536 && camZooming && FlxG.camera.zoom < 1.35)
+			{
+				FlxG.camera.zoom += 0.020;
+				camHUD.zoom += 0.05;
+			}
 
 		iconP1.setGraphicSize(Std.int(iconP1.width + 30));
 		iconP2.setGraphicSize(Std.int(iconP2.width + 30));
@@ -4359,6 +4762,38 @@ class PlayState extends MusicBeatState
 
 		switch (curStage)
 		{
+			//dansa gatinho
+			case 'mamar':
+
+				if (veiobat == 1)
+					{
+					if (curBeat % 4 == 0)
+						{
+							veio.animation.play('bop', true);
+						}
+					}
+
+				if (veiobat == 2)
+					{
+					if (curBeat % 2 == 1)
+						{
+							veio.animation.play('bop', true);
+						}
+					}
+
+				if (veiobat == 3)
+					{
+						if (curBeat % 1 == 0)
+							{
+								veio.animation.play('bop', true);
+							}
+					}
+
+
+				gordin.animation.play('bop', true);
+				
+						menina.animation.play('bop', true);
+						
 			case 'school':
 				if(FlxG.save.data.distractions){
 					bgGirls.dance();
