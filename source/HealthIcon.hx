@@ -128,7 +128,6 @@ class HealthIcon extends FlxSprite
 			#end
 			
 		}
-	}
 
 	override function update(elapsed:Float)
 	{
