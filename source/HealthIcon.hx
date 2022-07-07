@@ -12,6 +12,7 @@ class HealthIcon extends FlxSprite
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
+		this.character = "";
 		
 		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
 
@@ -66,7 +67,6 @@ class HealthIcon extends FlxSprite
 		scrollFactor.set();
 	}
 
-                }
 		if(char != this.character){ //thx Tr1ngle Engine
 			
 			if(loadGraphic(Paths.image("icons/icon-" + char)).width >= 450)
