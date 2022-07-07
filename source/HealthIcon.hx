@@ -69,7 +69,6 @@ class HealthIcon extends FlxSprite
 		scrollFactor.set();
 	}
 
-        }
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
