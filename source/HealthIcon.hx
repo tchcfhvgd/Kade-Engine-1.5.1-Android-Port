@@ -8,10 +8,22 @@ class HealthIcon extends FlxSprite
 	 * Used for FreeplayState! If you use it elsewhere, prob gonna annoying
 	 */
 	public var sprTracker:FlxSprite;
+	public var char:String;
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
 		super();
+		this.char = char;
+		switch (char) {
+		case 'core':
+			loadGraphic(Paths.image('icons/icon-core'), true, 150, 150);
+			animation.add('core', [0, 1], 0, false, isPlayer);
+		case 'baldi':
+			loadGraphic(Paths.image('icons/icon-principal'), true, 150, 150);
+			animation.add('baldi', [0, 1], 0, false, isPlayer);
+		case 'principal':
+			loadGraphic(Paths.image('icons/icon-principal'), true, 150, 150);
+			animation.add('principal', [0, 1], 0, false, isPlayer);
 		
 		loadGraphic(Paths.image('iconGrid'), true, 150, 150);
 
