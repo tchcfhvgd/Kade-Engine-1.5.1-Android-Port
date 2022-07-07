@@ -61,16 +61,6 @@ class HealthIcon extends FlxSprite
 		animation.add('monster-christmas', [19, 20], 0, false, isPlayer);
 		animation.play(char);
 
-		switch(char)
-		{
-			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':
-				antialiasing = false;
-		}
-
-		scrollFactor.set();
-	}
-
-                }
 		if(char != this.character){ //thx Tr1ngle Engine
 			
 			if(loadGraphic(Paths.image("icons/icon-" + char)).width >= 450)
@@ -86,6 +76,15 @@ class HealthIcon extends FlxSprite
 			animation.play(char);
 			this.character = char;
 		}
+	}
+
+		switch(char)
+		{
+			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':
+				antialiasing = false;
+		}
+
+		scrollFactor.set();
 	}
 
 	override function update(elapsed:Float)
