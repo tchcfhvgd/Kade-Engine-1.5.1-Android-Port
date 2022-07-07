@@ -78,6 +78,7 @@ class HealthIcon extends FlxSprite
 		}
 	}
 
+                }
 		switch(char)
 		{
 			case 'bf-pixel' | 'senpai' | 'senpai-angry' | 'spirit' | 'gf-pixel':
